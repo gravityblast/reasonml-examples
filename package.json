@@ -1,0 +1,19 @@
+{
+  "name": "foo",
+  "version": "0.1.0",
+  "scripts": {
+    "compile": "bsb -make-world -w",
+    "build": "webpack -w",
+    "start": "concurrently --kill-others -p \"[{name}]\" -n \"BSB,WEBPACK,DEV-SERVER\"  \"npm run compile\" \"npm run build\" \"./node_modules/.bin/webpack-dev-server\""
+  },
+  "keywords": [
+    "BuckleScript"
+  ],
+  "license": "MIT",
+  "devDependencies": {
+    "bs-platform": "1.8.0",
+    "concurrently": "^3.5.0",
+    "webpack": "^3.0.0",
+    "webpack-dev-server": "^2.5.0"
+  }
+}
