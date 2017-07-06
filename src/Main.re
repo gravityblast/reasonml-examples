@@ -1,4 +1,1 @@
-let () =
-  "ReasonML!"
-  |> Foo.foo
-  |> Js.log
+ReactDOMRe.renderToElementWithId <Hello /> "root";

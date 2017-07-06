@@ -1,10 +1,11 @@
 {
   "name": "foo",
+  "reason" : {"react-jsx" : 2},
   "version": "0.1.0",
   "sources": [
     "src"
   ],
   "bs-dependencies" : [
-      // add your bs-dependencies here 
+    "reason-react"
   ]
 }
