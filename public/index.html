@@ -3,8 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <title></title>
+  <style>
+    #container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    #canvas-container {
+      border: 2px solid #1a1a1a;
+    }
+  </style>
 </head>
 <body>
+  <div id="container">
+    <div id="canvas-container">
+      <canvas id="canvas" width="500" height="500"></canvas>
+    </div>
+  </div>
   <script src="bundle.js"></script>
 </body>
 </html>
