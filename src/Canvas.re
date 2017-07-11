@@ -26,17 +26,5 @@ external arc : context => float => float => float => float => float => bool => u
 
 external stroke : context => unit = "stroke" [@@bs.send];
 
-let drawBall (ctx: context) (ball: Model.ball) => {
-  fillStyle ctx "rgba(0, 0, 0, 1)";
-  beginPath ctx;
-  arc ctx ball.position.x ball.position.y ball.radius 0. (2. *. Utils.mathPI) false;
-  fill ctx
-};
-
-let clear (ctx: context) (model: Model.t) :unit =>
-  clearRect ctx 0. 0. model.canvasSize model.canvasSize;
-
-let draw (ctx: context) (model: Model.t) => {
-  clear ctx model;
-  drawBall ctx model.ball
-};
+let clear (ctx: context) (r: Rect.t) :unit =>
+  clearRect ctx r.position.x r.position.y r.size.x r.size.y;

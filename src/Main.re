@@ -6,7 +6,7 @@ let start (ctx: Canvas.context) (model: Model.t) => {
     let elapsed = Utils.getDelta !lastFrameTime now;
     let dt = elapsed > 50. ? 50. : elapsed;
     m := Game.update dt !m;
-    Canvas.draw ctx !m;
+    Game.draw ctx !m;
     lastFrameTime := now;
     Document.requestAnimationFrame loop
   };
