@@ -5,6 +5,12 @@ type t = {
   speed: float
 };
 
+let rect (ball: t) :Rect.t => {
+  let size: Vec.t = {x: ball.radius *. 2., y: ball.radius *. 2.};
+  let position: Vec.t = {x: ball.position.x -. ball.radius, y: ball.position.y -. ball.radius};
+  {position, size}
+};
+
 let draw (ctx: Canvas.context) (ball: t) => {
   Canvas.fillStyle ctx "rgba(0, 0, 0, 1)";
   Canvas.beginPath ctx;
@@ -25,7 +31,7 @@ let fixMovements (ball: t) canvasSize :t => {
   {...ball, position: {x: newX, y: newY}, direction: {x: newDx, y: newDy}}
 };
 
-let update dt (ball: t) canvasSize => {
+let update dt canvasSize (ball: t) => {
   let newX = ball.position.x +. ball.speed *. ball.direction.x *. dt /. 1000.;
   let newY = ball.position.y +. ball.speed *. ball.direction.y *. dt /. 1000.;
   let ball = {...ball, position: {x: newX, y: newY}};
